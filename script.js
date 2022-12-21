@@ -5,6 +5,11 @@ function generatePassword(){
     console.log("button pressed");
     // PSEUDO CODING
     //1. Create prompts for password criteria
+    let person = prompt("Please enter your name", "Harry Potter");
+
+    if (person != null) {
+         console.log(person);
+    }
         //a. passwordChar>=8 && passwordChar<=128 && dataTypeOf == number
             //if input does not meet criteria, re-ask the question
         //b. charType booleans= isLowerCase, isUpperCase, isNumeric, areSpecialChar
@@ -34,10 +39,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-// let person = prompt("Please enter your name", "Harry Potter");
-
-// if (person != null) {
-//   document.getElementById("demo").innerHTML =
-//   "Hello " + person + "! How are you today?";
-// }
