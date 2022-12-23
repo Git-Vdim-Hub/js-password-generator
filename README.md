@@ -2,70 +2,47 @@
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
-
-## Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
+ - This project generates a random password in your browser window based on four criteria: character count ( between 8 and 128), upper case letters (yes/no), lower case letters (yes/no), numbers (yes/no), and special characters (yes/no). 
+ - After selecting all criteria, the user is given a password based on that criteria. 
+ - The motivation for this project was based on an interest in sharpening my development skills in Java Script in the following topics: arrays, loops, functions, event listeners, strings, and methods. 
+ - Additionally understanding the random method within math. Additionally, strong passwords are an important part of any secure account.
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+No additional steps are required to deploy this project.
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+Navigate to the webpage: [Password Generator](https://git-vdim-hub.github.io/js-password-generator/)
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+Follow the prompts (select a number between 8 and 128), choose if you would like to use upper case letters, lower case letters, numbers and/or special characters
 
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+![](./assets/images/Start.JPG)
+![](./assets/images/#Characters.JPG)
+![start](./assets/images/lowercase.JPG)
+![start](./assets/images/UpperCase.JPG)
+![start](./assets/images/numbers.JPG)
+![start](./assets/images/specialchar.JPG)
+![start](./assets/images/passwordgen.JPG)
 
 ## Credits
 
 Used Javascript Password Generator bt Paul Keldsen Video as starting point:
 https://youtu.be/x4HUaiazDes
 
-
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
-
-## License
-
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
-
----
-
-🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
-
-## Badges
-
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
-
-Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
-
 ## Features
 
-If your project has a lot of features, list them here.
+- numbers
+- letters (upper case)
+- letters (lower case)
+- special characters
 
-## How to Contribute
 
-If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
 
 ## Tests
 
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
+- test characters outside the bounds: less than 8 greater than 128 or cancel (should re-prompt)
+- test selecting all no for the choices (should reprompt boolean choices)
+- should see letters a-z lower case and upper case during testing
+- should see numbers 0-9 during testing
+- should see the following special chracters: "!",'"',"#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","]", "^","_", "`", "{", "|", "}", "~"
