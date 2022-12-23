@@ -16,11 +16,15 @@ function generatePassword(){
     //1. Create prompts for password criteria
     //a. numChar>=8 && passwordChar<=128 && dataTypeOf == number
     //if input does not meet criteria, re-ask the question
-    let numCharAsk = prompt("How many characters do you want your password to be?\n(please enter a number between 7 and 129)", 10);
-        if(numCharAsk>=8 && numCharAsk<=128 && numCharAsk != null){
-            numChar=numCharAsk;
-        }
-    
+    function numCharChecker(){
+        let numCharAsk = prompt("How many characters do you want your password to be?\n     (please enter a number between 7 and 129)", 10);
+            if(numCharAsk>=8 && numCharAsk<=128 && numCharAsk != null){
+                numChar=numCharAsk;
+            }else{
+                numCharChecker();
+            }
+    }
+    numCharChecker();
     
         
     //atleast 1 character type needs to be selected, restart all questions if no selected on all choices, restart char prompts 
@@ -29,7 +33,8 @@ function generatePassword(){
 
     //b. charType booleans= isLowerCase, isUpperCase, isNumeric, areSpecialChar 
     //only provide yes/no option for all charType questions use confirm() method   
-    let upperCase = "Confirm OK for upper case letters";
+    function passParameterChecker(){
+        let upperCase = "Confirm OK for upper case letters";
         if (confirm(upperCase) == true) {
             upperCase = "You pressed OK!";
             isUpperCase=true;
@@ -39,35 +44,42 @@ function generatePassword(){
         }
         console.log("isUpperCase: " + isUpperCase);
     
-    let lowerCase = "Confirm OK for lower case letters";
-        if (confirm(lowerCase) == true) {
-            lowerCase = "You pressed OK!";
-            isLowerCase=true;
-        } else {
-            lowerCase = "You canceled!";
-            isLowerCase=false;
-        }
-        console.log("isLowerCase: " + isLowerCase);
+        let lowerCase = "Confirm OK for lower case letters";
+            if (confirm(lowerCase) == true) {
+                lowerCase = "You pressed OK!";
+                isLowerCase=true;
+            } else {
+                lowerCase = "You canceled!";
+                isLowerCase=false;
+            }
+            console.log("isLowerCase: " + isLowerCase);
     
-    let numeric = "Confirm OK for numbers";
-        if (confirm(numeric) == true) {
-            numeric = "You pressed OK!";
-            isNumeric=true;
-        } else {
-            numeric = "You canceled!";
-            isNumeric=false;
-        }
-        console.log("isNumberic: " + isNumeric);
+        let numeric = "Confirm OK for numbers";
+            if (confirm(numeric) == true) {
+                numeric = "You pressed OK!";
+                isNumeric=true;
+            } else {
+                numeric = "You canceled!";
+                isNumeric=false;
+            }
+            console.log("isNumberic: " + isNumeric);
 
-    let specialChar = "Confirm OK for special characters";
-        if (confirm(specialChar) == true) {
-            specialChar = "You pressed OK!";
-            areSpecialChar=true;
-        } else {
-            specialChar = "You canceled!";
-            areSpecialChar=false;
+        let specialChar = "Confirm OK for special characters";
+            if (confirm(specialChar) == true) {
+                specialChar = "You pressed OK!";
+                areSpecialChar=true;
+            } else {
+                specialChar = "You canceled!";
+                areSpecialChar=false;
         }
         console.log("areSpecialChar: " + areSpecialChar);
+
+        if(!isLowerCase && !isUpperCase && !areSpecialChar && !isNumeric){
+            passParameterChecker();
+        }    
+    }
+    passParameterChecker();
+
             
     //2. Generate the random password
         //use =Math.floor(Math.random() * 10)
